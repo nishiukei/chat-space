@@ -3,12 +3,13 @@
 ## userテーブル
 |column|Type|Options|
 |------|----|------|
-|name|text|null: false,|
-|email|text|null: false, foreign_key: true|
-|password|text|null: false, foreign_key: true|
+|name|text|null: false|
+|email|text|null: false|
+|password|text|null: false|
 ### Association
-- has_many :group, througth :groups_users
-- has_many :comment
+- has_many :group, througth: :groups_users
+- has_many :groups_users
+- has_many :message
 
 
 ## groups_usersテーブル
@@ -27,9 +28,10 @@
 |name|text|null: false|
 ### Association
 - has_many :user, througth :groups_users
-- has_many :comment
+- has_many :message
+- has_many :groups_users
 
-## commentテーブル
+## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
 |message|text|null: false|
