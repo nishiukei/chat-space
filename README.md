@@ -3,20 +3,20 @@
 ## userテーブル
 |column|Type|Options|
 |------|----|------|
-|name|text|null: false|
-|email|text|null: false|
-|password|text|null: false|
+|name|string|null: false, index: true|
+|email|string|null: false|
+|password|string|null: false|
 ### Association
-- has_many :group, througth: :groups_users
+- has_many :groups, througth: :groups_users
 - has_many :groups_users
-- has_many :message
+- has_many :messages
 
 
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
 - belongs_to :user
@@ -25,18 +25,19 @@
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
+|name|string|null: false|
 ### Association
-- has_many :user, througth :groups_users
-- has_many :message
+- has_many :users, througth :groups_users
+- has_many :messages
 - has_many :groups_users
 
 ## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|message|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|message|text||
+|images|string||
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 ### Association
 - belongs_to: user
 - belongs_to: group
