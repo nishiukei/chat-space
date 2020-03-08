@@ -1,0 +1,31 @@
+.main_chat
+  .main_chat__top
+    .main_chat__top__name
+      .user test
+      .menber Menber : aaaaa
+    .main_chat__top__box
+      = link_to "#", class: "edit" do
+        Edit
+        
+  .main_chat__list
+    .main_chat__list__box
+      .main_chat__list__box__user
+        .user
+          %b nisiura
+        .time 2020/3/4 23:13
+      .main_chat__list__message うす
+    .main_chat__list__box
+      .main_chat__list__box__user
+        .user
+          %b nisiura
+        .time 2020/3/4 23:13
+      .main_chat__list__message うす usu
+
+  .main_chat__message-form
+    %form.main_chat__message-form__box
+      .new-message
+        %input{type: "text", class: "input-box", placeholder: "  type a message"}
+        %label{class: "file"}
+          = icon("far", "image")
+          %input{type: "file", class: "none"}
+      %input{type: "submit", class: "send-btn", value: "Send"}
