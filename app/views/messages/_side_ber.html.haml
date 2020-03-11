@@ -2,12 +2,13 @@
   .side_ber__top
     .side_ber__top__items
       %p.side_ber__top__items--name
-        %b name
+        %b
+          = current_user.name
       %p.side_ber__top__items--icon
         = link_to "#", class: "awesome" do
           = icon("far", "edit")
           %span<>
-        = link_to "#", class: "awesome" do
+        = link_to edit_user_path(current_user), class: "awesome" do
           = icon("fas", "cog")
   .side_ber__group
     .side_ber__group__list
