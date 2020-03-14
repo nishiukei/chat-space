@@ -5,12 +5,17 @@
         %b
           = current_user.name
       %p.side_ber__top__items--icon
-        = link_to "#", class: "awesome" do
+        = link_to new_group_path(), class: "awesome" do
           = icon("far", "edit")
           %span<>
         = link_to edit_user_path(current_user), class: "awesome" do
           = icon("fas", "cog")
   .side_ber__group
     .side_ber__group__list
-      %p.side_ber__group__list__name techcamp
-      %p.side_ber__group__list__notice まだメッセージはありません
+      - current_user.groups.each do |group|
+        .group
+          = link_to messages_path do
+            %p.side_ber__group__list__name
+              = group.name
+            %p.side_ber__group__list__notice
+              まだメッセージはありません

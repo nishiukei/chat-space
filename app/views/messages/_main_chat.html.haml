@@ -1,12 +1,16 @@
 .main_chat
   .main_chat__top
     .main_chat__top__name
-      .user test
-      .menber Menber : aaaaa
+      - current_user.groups.each do |group|
+        .group
+          .user
+            = group.name
+          .menber 
+            = "Menber : #{group.name}"
     .main_chat__top__box
-      = link_to "#", class: "edit" do
+      = link_to edit_group_path(current_user), class: "edit" do
         Edit
-        
+
   .main_chat__list
     .main_chat__list__box
       .main_chat__list__box__user
