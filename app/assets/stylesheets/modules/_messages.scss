@@ -43,6 +43,7 @@
   &__group{
     height: calc(100vh - 100px);
     background-color: #2f3e51;
+    overflow: scroll;
 
     &__list{
       color: #fff;
@@ -105,6 +106,7 @@
   &__list{
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
+    overflow: scroll;
 
     &__box{
       margin-left: 40px;
