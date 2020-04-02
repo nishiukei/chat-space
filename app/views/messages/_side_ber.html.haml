@@ -13,8 +13,9 @@
   .side_ber__group
     .side_ber__group__list
       - current_user.groups.each do |group|
-        = link_to group_messages_path(group), class: "side_ber__group__list__links" do
-          %p.side_ber__group__list__links__name
-            = group.name
-          %p.side_ber__group__list__links__notice
-            = group.show_last_message
+        .group
+          = link_to group_messages_path(group) do
+            %p.side_ber__group__list__name
+              = group.name
+            %p.side_ber__group__list__notice
+              = group.show_last_message
