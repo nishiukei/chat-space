@@ -145,17 +145,16 @@
     .form{
       width: 100%;
       display: flex;
-      justify-content: space-around;
+      padding: 20px 40px;
       .new_message{
-        width: 92%;
+        width: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        // background-color: #fff;
         .form__message{
           height: 50px;
           width: 100%;
           border: none;
+          padding-left: 10px;
         }
 
         .form__mask__image{
@@ -180,7 +179,7 @@
         }
         .form__submit{
           height: 50px;
-          width: 100px;
+          width: 115px;
           color:#fff;
           background-color: #38aef0;
         }
